@@ -26,6 +26,8 @@ app.get('/preview', async (req, res) => {
 
         res.json(previewData);
       } catch (error) {
+	console.log('ERROR');
+	console.log(error);
           res.send(error);
       }
 });
