@@ -18,6 +18,18 @@ app.get('/', async (req, res) => {
       }
 });
 
+app.get('/preview', async (req, res) => {
+    console.log('Received requst for preview');
+    try {
+        const previewData = await linkPreviewGenerator(req.query.url);
+        console.log(previewData);
+
+        res.json(previewData);
+      } catch (error) {
+          res.send(error);
+      }
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 });
