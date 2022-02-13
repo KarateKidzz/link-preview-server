@@ -7,7 +7,7 @@ const linkPreviewGenerator = require("link-preview-generator");
 app.use(cors());
 
 app.get('/', async (req, res) => {
-    console.log('Received requst for preview');
+    console.log('Received request for preview on root');
     try {
         const previewData = await linkPreviewGenerator(req.query.url);
         console.log(previewData);
@@ -19,7 +19,7 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/preview', async (req, res) => {
-    console.log('Received requst for preview');
+    console.log('Received request for preview on /preview');
     try {
         const previewData = await linkPreviewGenerator(req.query.url);
         console.log(previewData);
